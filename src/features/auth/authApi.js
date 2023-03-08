@@ -24,7 +24,7 @@ export const authApi = apiSlice.injectEndpoints({
                         user: result.data.user
                     }))
                 } catch(err) {
-
+                    
                 }
             }
         }),
@@ -56,4 +56,4 @@ export const authApi = apiSlice.injectEndpoints({
     })
 })
 
-export const {useLoginMutation, useRegisterMutation} = authApi
+export const {useLoginMutation, useRegisterMutation} = authApi;
