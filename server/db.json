@@ -29,6 +29,12 @@
       "password": "$2a$10$XLjNe.qN.bFSkC1O6UgSBu80ZOh8XX77xx9twDlmTMIzGT.BsInrO",
       "name": "saad",
       "id": 5
+    },
+    {
+      "email": "test@2.com",
+      "password": "$2a$10$kAZX7u0mzT5w19Y4LnQ70.NvCbtx1p/S9pQ6j9uHkAUYGMl.i4noG",
+      "name": "test2",
+      "id": 6
     }
   ],
   "conversations": [
