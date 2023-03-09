@@ -4,6 +4,7 @@ import Conversation from "./pages/Conversation";
 import Inbox from "./pages/Inbox";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const authChecked = useAuthCheck();
@@ -15,8 +16,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/inbox" element={<Conversation />} />
-        <Route path="/inbox/:id" element={<Inbox />} />
+        <Route
+          path="/inbox"
+          element={
+            <PrivateRoute>
+              <Conversation />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/inbox/:id"
+          element={
+            <PrivateRoute>
+              <Inbox />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   );
