@@ -10,4 +10,4 @@ export const conversationApi = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useConversationsQuery } = conversationApi;
+export const { useGetConversationsQuery } = conversationApi;

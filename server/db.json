@@ -13,12 +13,6 @@
       "id": 2
     },
     {
-      "email": "saad@learnwithsumit.com",
-      "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-      "name": "Saad Hasan",
-      "id": 3
-    },
-    {
       "email": "ahmedali69325@gmail.com",
       "password": "$2a$10$XQVQ/GIjAO4PzLTrDNY.yeEtzXLR2I2.JjN3sn0jBB7IwbkqvYJ/i",
       "name": "Ahmed Ali",
@@ -35,6 +29,12 @@
       "password": "$2a$10$kAZX7u0mzT5w19Y4LnQ70.NvCbtx1p/S9pQ6j9uHkAUYGMl.i4noG",
       "name": "test2",
       "id": 6
+    },
+    {
+      "email": "saad@learnwithsumit.com",
+      "password": "$2a$10$Bfm.oewU7m4CFBb6LZH21eu0isxhKCTQvtyq6E04XO8R.SNU1o2te",
+      "name": "saad",
+      "id": 7
     }
   ],
   "conversations": [
