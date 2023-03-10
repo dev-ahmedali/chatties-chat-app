@@ -73,6 +73,24 @@
       ],
       "message": "How are you?",
       "timestamp": 1661976143678
+    },
+    {
+      "id": 3,
+      "participants": "ahmedali69325@gmail.com-saad@learnwithsumit.com",
+      "users": [
+        {
+          "email": "ahmedali69325@gmail.com",
+          "name": "Ahmed Ali",
+          "id": 4
+        },
+        {
+          "email": "akash@learnwithsumit.com",
+          "name": "Saad Hasan",
+          "id": 3
+        }
+      ],
+      "message": "How are you?",
+      "timestamp": 1661976143678
     }
   ],
   "messages": [
