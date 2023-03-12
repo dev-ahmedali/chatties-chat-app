@@ -84,9 +84,9 @@
           "id": 4
         },
         {
-          "email": "akash@learnwithsumit.com",
+          "email": "saad@learnwithsumit.com",
           "name": "Saad Hasan",
-          "id": 3
+          "id": 7
         }
       ],
       "message": "How are you?",
@@ -122,6 +122,22 @@
         "email": "sumit@learnwithsumit.com",
         "name": "Sumit Saha",
         "id": 1
+      },
+      "message": "How are you?",
+      "timestamp": 1661976143678
+    },
+    {
+      "id": 3,
+      "conversationId": 1,
+      "sender": {
+        "email": "ahmedali69325@gmail.com",
+        "name": "Ahmed Ali",
+        "id": 4
+      },
+      "receiver": {
+        "email": "saad@learnwithsumit.com",
+        "name": "Saad Hasan",
+        "id": 7
       },
       "message": "How are you?",
       "timestamp": 1661976143678
