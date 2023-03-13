@@ -10,6 +10,8 @@ export default function ChatBody() {
   const { id } = useParams();
   const { data: messages, isLoading, isError, error } = useGetMessagesQuery(id);
 
+  console.log(messages);
+
   // decide what to render
   let content = null;
 
@@ -18,7 +20,7 @@ export default function ChatBody() {
   } else if (!isLoading && isError) {
     content = (
       <div>
-        <Error messages={error?.data} />
+        <Error message={error?.data} />
       </div>
     );
   } else if (!isLoading && !isError && messages?.length === 0) {
@@ -39,13 +41,7 @@ export default function ChatBody() {
   return (
     <div className="w-full lg:col-span-2 lg:block">
       <div className="w-full grid conversation-row-grid">
-        <ChatHead
-          avatar="https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083383__340.jpg"
-          name="Akash Ahmed"
-        />
-        <Messages />
-        <Options />
-        {/* <Blank /> */}
+       {content}
       </div>
     </div>
   );
