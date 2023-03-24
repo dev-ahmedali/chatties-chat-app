@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { conversationApi } from "../../features/conversations/conversationApi";
 import { useGetUserQuery } from "../../features/users/usersApi";
 import isvalidEmail from "../../utils/isValidEmail";
 import Error from "../ui/Error";
@@ -7,9 +9,23 @@ export default function Modal({ open, control }) {
   const [to, setTo] = useState("");
   const [message, setMessage] = useState("");
   const [checkUser, setCheckUser] = useState(false);
+  const { user: loggedInUser } = useSelector((state) => state.auth) || {};
+  const { email: myEmail } = loggedInUser || {};
+  const dispatch = useDispatch();
   const { data: participant } = useGetUserQuery(to, {
     skip: !checkUser,
   });
+
+  useEffect(() => {
+    if (participant?.length > 0 && participant[0].email !== myEmail) {
+      dispatch(
+        conversationApi.endpoints.getConversation.initiate({
+          usersEmail: myEmail,
+          participantEmail: to,
+        }),
+      );
+    }
+  }, [participant, myEmail, dispatch, to]);
   const debounceHandler = (fn, delay) => {
     let timeoutId;
     return (...args) => {
@@ -80,6 +96,9 @@ export default function Modal({ open, control }) {
 
             {participant?.length === 0 && (
               <Error message="This user does not exits" />
+            )}
+            {participant?.length === 0 && participant[0].email === myEmail && (
+              <Error message="You can't send message to yourself" />
             )}
           </form>
         </div>
