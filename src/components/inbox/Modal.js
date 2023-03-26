@@ -9,6 +9,8 @@ export default function Modal({ open, control }) {
   const [to, setTo] = useState("");
   const [message, setMessage] = useState("");
   const [checkUser, setCheckUser] = useState(false);
+  const [responseError, setResponseError] = useState("");
+  const [conversation, setConversation] = useState(undefined);
   const { user: loggedInUser } = useSelector((state) => state.auth) || {};
   const { email: myEmail } = loggedInUser || {};
   const dispatch = useDispatch();
@@ -23,9 +25,17 @@ export default function Modal({ open, control }) {
           usersEmail: myEmail,
           participantEmail: to,
         }),
-      );
+      )
+        .unwrap()
+        .then((data) => {
+          setConversation(data);
+        })
+        .catch((err) => {
+          setResponseError("There was a problem");
+        });
     }
   }, [participant, myEmail, dispatch, to]);
+
   const debounceHandler = (fn, delay) => {
     let timeoutId;
     return (...args) => {
@@ -43,6 +53,11 @@ export default function Modal({ open, control }) {
   };
 
   const handleSearch = debounceHandler(doSearch, 500);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted");
+  };
   return (
     open && (
       <>
@@ -53,7 +68,7 @@ export default function Modal({ open, control }) {
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Send message
           </h2>
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <label htmlFor="to" className="sr-only">
@@ -89,7 +104,11 @@ export default function Modal({ open, control }) {
             <div>
               <button
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500">
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500"
+                disabled={
+                  conversation === undefined ||
+                  (participant?.length > 0 && participant[0].email === myEmail)
+                }>
                 Send Message
               </button>
             </div>
@@ -97,9 +116,10 @@ export default function Modal({ open, control }) {
             {participant?.length === 0 && (
               <Error message="This user does not exits" />
             )}
-            {participant?.length === 0 && participant[0].email === myEmail && (
+            {participant?.length > 0 && participant[0].email === myEmail && (
               <Error message="You can't send message to yourself" />
             )}
+            {responseError && <Error message={responseError} />}
           </form>
         </div>
       </>
