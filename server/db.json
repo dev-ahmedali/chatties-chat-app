@@ -7,18 +7,6 @@
       "id": 3
     },
     {
-      "email": "test@gmail.com",
-      "password": "$2a$10$Ad8853WCm4fyES7yBV.Wr.cGnx05bEwIi163VoopfPO4RicVQfuj6",
-      "name": "Test",
-      "id": 4
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "$2a$10$Zz.7BmfFYT6iKwl/Z11bAOp454rpMEyumveCXZ4i8XNU8agJZJSF.",
-      "name": "Test 2",
-      "id": 5
-    },
-    {
       "email": "saad@learnwithsumit.com",
       "password": "$2a$10$cgPe5y4g5W8fpwrvtCEI..uewGmRlDYGf3InAQo0TXEfY3hPxmfFS",
       "name": "saad",
@@ -29,6 +17,12 @@
       "password": "$2a$10$Tqc5CaAU2lMaU//qyAQ3YeTX5R3rXEqWUrSbfH2dTkkxpv2LKeqIi",
       "name": "Sumit Saha",
       "id": 1
+    },
+    {
+      "email": "ahmedali@1.com",
+      "password": "$2a$10$PUO39kaZrUZw25pT2plmmOc61sW41Ro/b37g1rQluaY/wOAgMTbEy",
+      "name": "Ahmed Ali",
+      "id": 4
     }
   ],
   "conversations": [
@@ -43,12 +37,13 @@
         },
         {
           "email": "akash@learnwithsumit.com",
-          "name": "Akash Ahmed",
-          "id": 2
+          "password": "$2a$10$lpx3hz9hiN9zp4n/30LHset1/tt/30.Cq6w6f/kjTL.IUM7PgGniG",
+          "name": "Akash",
+          "id": 3
         }
       ],
-      "message": "Hello akash",
-      "timestamp": 1662369958211
+      "message": "Javascript is awesome",
+      "timestamp": 1679817281426
     },
     {
       "id": 2,
@@ -283,6 +278,44 @@
       ],
       "message": "How are you?",
       "timestamp": 1661976143678
+    },
+    {
+      "participants": "ahmedali@1.com-akash@learnwithsumit.com",
+      "users": [
+        {
+          "email": "ahmedali@1.com",
+          "name": "Ahmed Ali",
+          "id": 4
+        },
+        {
+          "email": "akash@learnwithsumit.com",
+          "password": "$2a$10$lpx3hz9hiN9zp4n/30LHset1/tt/30.Cq6w6f/kjTL.IUM7PgGniG",
+          "name": "Akash",
+          "id": 3
+        }
+      ],
+      "message": "long time no see",
+      "timestamp": 1679817903898,
+      "id": 15
+    },
+    {
+      "participants": "ahmedali@1.com-sumit@learnwithsumit.com",
+      "users": [
+        {
+          "email": "ahmedali@1.com",
+          "name": "Ahmed Ali",
+          "id": 4
+        },
+        {
+          "email": "sumit@learnwithsumit.com",
+          "password": "$2a$10$Tqc5CaAU2lMaU//qyAQ3YeTX5R3rXEqWUrSbfH2dTkkxpv2LKeqIi",
+          "name": "Sumit Saha",
+          "id": 1
+        }
+      ],
+      "message": "Hello bhaiya",
+      "timestamp": 1679817951665,
+      "id": 16
     }
   ],
   "messages": [
