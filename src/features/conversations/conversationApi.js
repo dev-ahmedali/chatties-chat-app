@@ -30,7 +30,7 @@ export const conversationApi = apiSlice.injectEndpoints({
               conversationId: conversation?.data?.id,
               sender: senderUsers,
               receiver: receiverUsers,
-              message: arg.meta.message,
+              message: arg.data.message,
               timestamp: arg.data.timestamp,
             }),
           );

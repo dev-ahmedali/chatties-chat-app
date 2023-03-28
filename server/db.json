@@ -42,8 +42,8 @@
           "id": 3
         }
       ],
-      "message": "hi",
-      "timestamp": 1679944434634
+      "message": "will this work now",
+      "timestamp": 1679992360304
     },
     {
       "id": 2,
@@ -294,8 +294,8 @@
           "id": 3
         }
       ],
-      "message": "long time no see",
-      "timestamp": 1679817903898,
+      "message": "how are you",
+      "timestamp": 1679992859615,
       "id": 15
     },
     {
@@ -313,21 +313,27 @@
           "id": 1
         }
       ],
-      "message": "Hello bhaiya",
-      "timestamp": 1679817951665,
+      "message": "kemon asen bhai",
+      "timestamp": 1679991875374,
       "id": 16
     }
   ],
   "messages": [
     {
-      "conversationId": 1,
-      "receiver": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "Sumit Saha",
-        "id": 1
+      "conversationId": 15,
+      "sender": {
+        "email": "ahmedali@1.com",
+        "name": "Ahmed Ali",
+        "id": 4
       },
-      "message": "hi",
-      "timestamp": 1679944434634,
+      "receiver": {
+        "email": "akash@learnwithsumit.com",
+        "password": "$2a$10$lpx3hz9hiN9zp4n/30LHset1/tt/30.Cq6w6f/kjTL.IUM7PgGniG",
+        "name": "Akash",
+        "id": 3
+      },
+      "message": "how are you",
+      "timestamp": 1679992859615,
       "id": 1
     }
   ]

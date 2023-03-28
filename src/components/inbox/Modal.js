@@ -78,6 +78,7 @@ export default function Modal({ open, control }) {
       // edit conversation
       editConversation({
         id: conversation[0].id,
+        sender: myEmail,
         data: {
           participants: `${myEmail}-${participant[0].email}`,
           users: [loggedInUser, participant[0]],
