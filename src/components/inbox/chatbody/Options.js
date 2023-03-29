@@ -1,25 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useAddConversationMutation } from "../../../features/conversations/conversationApi";
+import { useAddConversationMutation, useEditConversationMutation } from "../../../features/conversations/conversationApi";
 
 export default function Options({info}) {
     const [message, setMessage] = useState("")
-    const [addConversation, { isSuccess: isSuccessAddConversation }] =
-    useAddConversationMutation();
+    const [editConversation, { isSuccess}] =
+    useEditConversationMutation();
+
+    useEffect(() => {
+        if(isSuccess) {
+            setMessage('')
+        }
+    }, [isSuccess])
     const {user: loggedInUser} = useSelector(state => state.auth)
 
     const participantUser = info.receiver.email !== loggedInUser.email ? info.receiver : info.sender
 
     const handleSubmit = (e) => {
-        // addConversation({
-        //     sender: loggedInUser?.email
-        //     data: {
-        //       participants: `${myEmail}-${participant[0].email}`,
-        //       users: [loggedInUser, participant[0]],
-        //       message,
-        //       timestamp: new Date().getTime(),
-        //     }
-        //   });
+        e.preventDefault()
+        editConversation({
+            sender: loggedInUser?.email,
+            data: {
+              participants: `${loggedInUser.email}-${participantUser.email}`,
+              users: [loggedInUser, participantUser],
+              message,
+              timestamp: new Date().getTime(),
+            }
+          });
     }
     return (
         <form className="flex items-center justify-between w-full p-3 border-t border-gray-300" onSubmit={handleSubmit}>
