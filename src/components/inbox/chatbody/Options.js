@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import {
-  useAddConversationMutation,
-  useEditConversationMutation,
-} from "../../../features/conversations/conversationApi";
+import { useEditConversationMutation } from "../../../features/conversations/conversationApi";
 
 export default function Options({ info }) {
   const [message, setMessage] = useState("");
   const [editConversation, { isSuccess }] = useEditConversationMutation();
-
-  console.log(info);
 
   useEffect(() => {
     if (isSuccess) {
@@ -24,7 +19,7 @@ export default function Options({ info }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     editConversation({
-        id: info?.conversationId,
+      id: info?.conversationId,
       sender: loggedInUser?.email,
       data: {
         participants: `${loggedInUser.email}-${participantUser.email}`,
