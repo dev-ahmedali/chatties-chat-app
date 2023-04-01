@@ -77,7 +77,7 @@ export const conversationApi = apiSlice.injectEndpoints({
                 timestamp: arg.data.timestamp,
               }),
             ).unwrap();
-            console.log(res);
+            
             // pesimistic cache update start
 
             dispatch(
