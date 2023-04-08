@@ -29,6 +29,42 @@
       "password": "$2a$10$/EuoqkXRCvMZC6CkVuUgO.7nYTtcID1Hq.rjWLg9cYL/gtO.PCT/e",
       "name": "test1",
       "id": 7
+    },
+    {
+      "email": "test@2.com",
+      "password": "$2a$10$b3bel/teFoPya6wTzMvVtOQNX.BP8sMkajhRBM2LXI2kTeJdifQYi",
+      "name": "test2",
+      "id": 8
+    },
+    {
+      "email": "test@3.com",
+      "password": "$2a$10$C/0YIR8/wBSIColkxsLKR.dZId2/o2A5QHMB4gbJN.NAsrXCZxRea",
+      "name": "test3",
+      "id": 9
+    },
+    {
+      "email": "test@4.com",
+      "password": "$2a$10$LU8XvZIKKXijrfgVXGrN5Oj7kvKuQAh7jk2.vmYj08yKYHGbLE4HO",
+      "name": "test4",
+      "id": 10
+    },
+    {
+      "email": "test@5.com",
+      "password": "$2a$10$0hEiI9kIXf3mAzOQaTnFCeMxi.T8tMdKR0wst2IT1YoOmEdbCX0DS",
+      "name": "test5",
+      "id": 11
+    },
+    {
+      "email": "test@6.com",
+      "password": "$2a$10$07vH9sFKm7GUxnyOM4mbZ.8GKUIhw.EgeJI4LdSq5.IDeUhs6grye",
+      "name": "test6",
+      "id": 12
+    },
+    {
+      "email": "test@7.com",
+      "password": "$2a$10$e5UOPZKHWyJp9FWYjbXKb.Sj2dtULy0HH2cGi1H0tLN/jhh/O69W2",
+      "name": "test7",
+      "id": 13
     }
   ],
   "conversations": [
@@ -106,6 +142,44 @@
       "message": "test2",
       "timestamp": 1680685952936,
       "id": 4
+    },
+    {
+      "participants": "ahmedali@1.com-test@2.com",
+      "users": [
+        {
+          "email": "ahmedali@1.com",
+          "name": "Ahmed Ali",
+          "id": 4
+        },
+        {
+          "email": "test@2.com",
+          "password": "$2a$10$b3bel/teFoPya6wTzMvVtOQNX.BP8sMkajhRBM2LXI2kTeJdifQYi",
+          "name": "test2",
+          "id": 8
+        }
+      ],
+      "message": "hello test2",
+      "timestamp": 1680931588451,
+      "id": 5
+    },
+    {
+      "participants": "ahmedali@1.com-test@3.com",
+      "users": [
+        {
+          "email": "ahmedali@1.com",
+          "name": "Ahmed Ali",
+          "id": 4
+        },
+        {
+          "email": "test@3.com",
+          "password": "$2a$10$C/0YIR8/wBSIColkxsLKR.dZId2/o2A5QHMB4gbJN.NAsrXCZxRea",
+          "name": "test3",
+          "id": 9
+        }
+      ],
+      "message": "hello test 3",
+      "timestamp": 1680931621277,
+      "id": 6
     }
   ],
   "messages": [
@@ -360,6 +434,40 @@
       "message": "test2",
       "timestamp": 1680685952936,
       "id": 15
+    },
+    {
+      "conversationId": 5,
+      "sender": {
+        "email": "ahmedali@1.com",
+        "name": "Ahmed Ali",
+        "id": 4
+      },
+      "receiver": {
+        "email": "test@2.com",
+        "password": "$2a$10$b3bel/teFoPya6wTzMvVtOQNX.BP8sMkajhRBM2LXI2kTeJdifQYi",
+        "name": "test2",
+        "id": 8
+      },
+      "message": "hello test2",
+      "timestamp": 1680931588451,
+      "id": 16
+    },
+    {
+      "conversationId": 6,
+      "sender": {
+        "email": "ahmedali@1.com",
+        "name": "Ahmed Ali",
+        "id": 4
+      },
+      "receiver": {
+        "email": "test@3.com",
+        "password": "$2a$10$C/0YIR8/wBSIColkxsLKR.dZId2/o2A5QHMB4gbJN.NAsrXCZxRea",
+        "name": "test3",
+        "id": 9
+      },
+      "message": "hello test 3",
+      "timestamp": 1680931621277,
+      "id": 17
     }
   ]
 }
