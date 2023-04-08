@@ -12,11 +12,12 @@ export default function ChatItems() {
   const { user } = useSelector((state) => state.auth) || {};
   const { email } = user || {};
   const {
-    data: conversations,
+    data,
     isLoading,
     isError,
     error,
-  } = useGetConversationsQuery(email);
+  } = useGetConversationsQuery(email) || {};
+  const {data: conversations, totalCount} = data || {}
 
   // decide what to render
   let content = null;
