@@ -63,7 +63,7 @@ export const conversationApi = apiSlice.injectEndpoints({
                 "getConversations",
                 email,
                 (draft) => {
-                  return [...draft, ...conversations];
+                  return draft;
                 },
               ),
             );

@@ -1,5 +1,8 @@
-import { useSelector } from "react-redux";
-import { useGetConversationsQuery } from "../../features/conversations/conversationApi";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  conversationApi,
+  useGetConversationsQuery,
+} from "../../features/conversations/conversationApi";
 import ChatItem from "./ChatItem";
 import Error from "../ui/Error";
 import moment from "moment/moment";
@@ -17,10 +20,22 @@ export default function ChatItems() {
   const { data: conversations, totalCount } = data || {};
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const dispatch = useDispatch();
 
   const fetchMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
+
+  useEffect(() => {
+    if (page > 1) {
+      dispatch(
+        conversationApi.endpoints.getMoreConversations.initiate({
+          email,
+          page,
+        }),
+      );
+    }
+  }, [dispatch, email, page]);
 
   useEffect(() => {
     if (totalCount > 0) {
