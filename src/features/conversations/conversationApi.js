@@ -55,7 +55,7 @@ export const conversationApi = apiSlice.injectEndpoints({
         try {
           const conversations = await queryFulfilled;
 
-          if (conversations?.length > 0) {
+          if (conversations?.data?.length > 0) {
             // pesimistic conversations cache update start
 
             dispatch(
@@ -63,7 +63,11 @@ export const conversationApi = apiSlice.injectEndpoints({
                 "getConversations",
                 email,
                 (draft) => {
-                  return draft;
+                  console.log(JSON.stringify(draft));
+                  return {
+                    data: [...draft, ...conversations.data],
+                    totalCount: Number(draft.totalCount)
+                  }
                 },
               ),
             );

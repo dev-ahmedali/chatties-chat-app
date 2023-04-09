@@ -22,6 +22,8 @@ export default function ChatItems() {
   const [hasMore, setHasMore] = useState(true);
   const dispatch = useDispatch();
 
+  console.log(hasMore);
+
   const fetchMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
@@ -38,6 +40,7 @@ export default function ChatItems() {
   }, [dispatch, email, page]);
 
   useEffect(() => {
+    console.log(page);
     if (totalCount > 0) {
       const more =
         Math.ceil(
